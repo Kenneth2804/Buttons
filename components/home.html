@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page con Barra de Búsqueda en Navbar</title>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FEE3B3;
+            color: #333;
+        }
+        .navbar {
+            background-color: #333; 
+            overflow: hidden;
+            padding: 10px;
+            position: relative;
+        }
+        .navbar a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #62DCB9; 
+            color: #0B8A30; 
+        }
+        .search-container {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+        .search-input {
+            padding: 10px;
+            font-size: 17px;
+            border: none;
+            border-radius: 5px;
+            width: 240px;
+        }
+        .search-button {
+            padding: 10px;
+            background: #62DCB9; 
+            color: white;
+            font-size: 17px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #33BE5B; 
+        }
+
+            @media (max-width: 600px) {
+            .navbar, .search-container {
+                position: static;
+                width: 100%;
+            }
+            .search-container {
+                margin-top: 10px;
+            }
+            .search-input, .search-button {
+                width: 70%;
+                box-sizing: border-box;
+            }
+            .search-button {
+                width: auto;
+                padding: 10px;
+                margin-top: 5px; 
+            }
+              .button {
+            
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+       
+
+         .button-container {
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; 
+        }
+        .button {
+            padding: 20px 20px;
+            margin: 10px;
+            background-color: #0B8A30; 
+            color: white; 
+            border: none;
+            border-radius: 20px; 
+            cursor: pointer;
+            transition: background-color 0.3s;
+            flex: 0 0 30%; 
+            max-width: 30%; 
+        }
+        .button:hover {
+            background-color: #33BE5B; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#home">Inicio</a>
+    <a href="videos/videos.html">Videos</a>
+    <a href="imagenes/imagenes.html">Imagenes</a>
+    <div class="search-container">
+        <input type="text" class="search-input" id="search-bar" onkeyup="searchButton()" placeholder="Buscar...">
+        <button class="search-button" onclick="searchButton()">Buscar</button>
+    </div>
+</div>
+
+<div class="button-container" id="button-container">
+    <a href="introduccion.html" class="button">Introducción a los Grupos Prioritarios</a>
+    <a href="grupos-prioritarios.html" class="button">¿Qué son los Grupos Prioritarios?</a>
+    <a href="importancia.html" class="button">Importancia de la Atención Prioritaria</a>
+    <a href="perspectiva-global.html" class="button">Grupos Prioritarios: Una Perspectiva Global</a>
+    <a href="desafios.html" class="button">Desafíos que Enfrentan los Grupos Prioritarios</a>
+    <a href="derechos-humanos.html" class="button">Derechos Humanos y Grupos Prioritarios</a>
+    <a href="promoviendo-equidad.html" class="button">Promoviendo la Equidad: Estrategias para Apoyar a los Grupos Prioritarios</a>
+    <a href="empoderamiento.html" class="button">Empoderamiento de los Grupos Prioritarios: Historias de Éxito</a>
+    <a href="herramientas-recursos.html" class="button">Herramientas y Recursos para la Inclusión de los Grupos Prioritarios</a>
+</div>
+
+<script>
+function searchButton() {
+    var input, filter, container, buttons, button, i, txtValue;
+    input = document.getElementById("search-bar");
+    filter = input.value.toUpperCase();
+    container = document.getElementById("button-container");
+    buttons = container.getElementsByTagName("button");
+    
+     for (i = 0; i < buttons.length; i++) {
+        button = buttons[i];
+        txtValue = button.textContent || button.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            button.style.display = "";
+        } else {
+            button.style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
