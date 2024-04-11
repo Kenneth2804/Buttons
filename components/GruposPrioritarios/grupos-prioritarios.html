@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Grupos Prioritarios</title>
+	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container, .footer {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .group-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; 
+            justify-content: center;
+            width: 100%;
+        }
+        .group {
+            flex: 0 0 calc(20% - 10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .group button {
+            padding: 66px 0px; /* Ajusta el relleno si es necesario para el tamaño del texto */
+            border: 2px solid #000;
+            background-color: transparent;
+            width: 100%; /* Asegura que el botón llene el .group */
+            height: 60px; /* Altura fija para todos los botones */
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+        }
+        .group button:hover {
+            background-color: #e8e8e8;
+        }
+        .footer {
+            background: #e8e8e8;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+	<div class="navbar">
+		<a href="#home">Inicio</a>
+		<a href="videos/videos.html">Videos</a>
+		<a href="imagenes/imagenes.html">Imagenes</a>
+		<div class="search-container">
+			<input type="text" class="search-input" id="search-bar" onkeyup="searchButton()" placeholder="Buscar...">
+			<button class="search-button" onclick="searchButton()">Buscar</button>
+		</div>
+	</div>
+	<div class="container">
+		<h1>¿Qué son los grupos prioritarios?</h1>
+		<p>Los grupos prioritarios son segmentos específicos de la población que requieren una atención especial o urgente debido a sus condiciones particulares. Estos grupos suelen incluir a personas en situaciones de vulnerabilidad, como niños, personas mayores, personas con discapacidades, mujeres embarazadas, personas en situación de pobreza, entre otros.</p>
+		
+		<div class="group-container" id="button-container">
+			<div class="group">
+				<button type="button">Niños y adolescentes</button>
+			</div>
+			<div class="group">
+				<button type="button">Personas con discapacidad</button>
+			</div>
+			<div class="group">
+				<button type="button">LGBT</button>
+			</div>
+			<div class="group">
+				<button type="button">Niños en situación de riesgo</button>
+			</div>
+			<div class="group">
+				<button type="button">Personas con adicciones</button>
+			</div>
+			<div class="group">
+				<button type="button">Mujeres</button>
+			</div>
+			<div class="group">
+				<button type="button">Personas con enfermedades crónicas</button>
+			</div>
+			<div class="group">
+				<button type="button">Trabajadores informales</button>
+			</div>
+			<div class="group">
+				<button type="button">Problemas con salud mental</button>
+			</div>
+			<div class="group">
+				<button type="button">Personas victimas de un desastre natural</button>
+			</div>
+			<div class="group">
+				<button type="button">Personas privadas de la libertad</button>
+			</div>
+			<div class="group">
+				<button type="button">Trabajadores migrantes</button>
+			</div>
+			<div class="group">
+				<button type="button">Adultos mayores</button>
+			</div>
+			<div class="group">
+				<button type="button">Personas en situaciones de pobreza</button>
+			</div>
+			<div class="group">
+				<button type="button">Minorías étnicas </button>
+			</div>
+		</div>
+		
+	</div>
+	<script src="../js/Search.js"></script>
+</body>
+</html>
