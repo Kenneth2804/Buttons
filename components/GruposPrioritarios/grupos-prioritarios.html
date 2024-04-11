@@ -10,17 +10,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f2f2f2;
+            background-color: #ffe3b3;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+			
         }
         .container, .footer {
             max-width: 1200px;
             margin: 20px auto;
-            background: #fff;
+            background-color: #ffe3b3;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
         }
         h1 {
             text-align: center;
@@ -44,20 +45,27 @@
             align-items: center;
             margin: 10px 0;
         }
-        .group button {
-            padding: 66px 0px; /* Ajusta el relleno si es necesario para el tamaño del texto */
-            border: 2px solid #000;
-            background-color: transparent;
-            width: 100%; /* Asegura que el botón llene el .group */
-            height: 60px; /* Altura fija para todos los botones */
-            text-align: center;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 1.2rem;
-        }
+		.group button {
+    padding: 10px; 
+    border: 2px solid #000;
+    background-color: #33be5B;
+    width: 390px; 
+    height: 100px; 
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    box-sizing: border-box; 
+}
+
+
+
         .group button:hover {
-            background-color: #e8e8e8;
+            background-color: #62DCB9;
         }
         .footer {
             background: #e8e8e8;
@@ -69,8 +77,8 @@
 </head>
 <body>
 	<div class="navbar">
-		<a href="#home">Inicio</a>
-		<a href="videos/videos.html">Videos</a>
+		<a href="/components/home.html">Inicio</a>
+		<a href="../videos/videos.html">Videos</a>
 		<a href="imagenes/imagenes.html">Imagenes</a>
 		<div class="search-container">
 			<input type="text" class="search-input" id="search-bar" onkeyup="searchButton()" placeholder="Buscar...">
@@ -83,49 +91,49 @@
 		
 		<div class="group-container" id="button-container">
 			<div class="group">
-				<button type="button">Niños y adolescentes</button>
+			<a href="./ninosAdolescentes/ninosAdolescentes.html">		<button type="button">Niños y adolescentes</button></a>
 			</div>
 			<div class="group">
-				<button type="button">Personas con discapacidad</button>
+				<a href="./personasDiscapacidad/personasDiscapacidad.html"><button type="button">Personas con discapacidad</button> </a>
 			</div>
 			<div class="group">
-				<button type="button">LGBT</button>
+				<a href="./LGBT/LGBT.html">  							 <button type="button">LGBT</button> </a>
 			</div>
 			<div class="group">
-				<button type="button">Niños en situación de riesgo</button>
+				<a href="./ninosRiesgo/ninosRiesgo.html">				 <button type="button">Niños en situación de riesgo</button> </a>
 			</div>
 			<div class="group">
-				<button type="button">Personas con adicciones</button>
+				<a href="./PersonasAdicciones/PersonasAdicciones.html">	<button type="button">Personas con adicciones</button> </a>
 			</div>
 			<div class="group">
-				<button type="button">Mujeres</button>
+				<a href="./Mujeres/Mujeres.html">						<button type="button">Mujeres</button> </a>
 			</div>
 			<div class="group">
-				<button type="button">Personas con enfermedades crónicas</button>
+				<a href="./enfermedadCronica/enfermedadCronica.html">	<button type="button">Personas con enfermedades crónicas</button> </a>
 			</div>
 			<div class="group">
-				<button type="button">Trabajadores informales</button>
+				<a href="./TrabajadoresInformales/TrabajadoresInformales.html">	<button type="button">Trabajadores informales</button> </a>
 			</div>
 			<div class="group">
-				<button type="button">Problemas con salud mental</button>
+				<a href="./SaludMental/SaludMental.html">	<button type="button">Problemas con salud mental</button> </a>
 			</div>
 			<div class="group">
-				<button type="button">Personas victimas de un desastre natural</button>
+				<a href="./DesastreNatural/DesastreNatural.html">	<button type="button">Personas victimas de un desastre natural</button></a>
 			</div>
 			<div class="group">
-				<button type="button">Personas privadas de la libertad</button>
+				<a href="./privadaLibertad/privadaLibertad.html">	<button type="button">Personas privadas de la libertad</button></a>
 			</div>
 			<div class="group">
-				<button type="button">Trabajadores migrantes</button>
+				<a href="./TrabajadoresMigrantes/TrabajadoresMigrantes.html">	<button type="button">Trabajadores migrantes</button></a>
 			</div>
 			<div class="group">
-				<button type="button">Adultos mayores</button>
+				<a href="./AdultosMayores/AdultosMayores.html">	<button type="button">Adultos mayores</button></a>
 			</div>
 			<div class="group">
-				<button type="button">Personas en situaciones de pobreza</button>
+				<a href="./SituacionPobreza/SituacionPobreza.html">	<button type="button">Personas en situaciones de pobreza</button></a>
 			</div>
 			<div class="group">
-				<button type="button">Minorías étnicas </button>
+				<a href="./MinoriaEtnica/MinoriaEtnica.html">	<button type="button">Minorías étnicas </button></a>
 			</div>
 		</div>
 		
