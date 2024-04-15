@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Grupos Prioritarios</title>
 	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="../css/background.css">
 	<style>
         body {
             font-family: Arial, sans-serif;
@@ -46,27 +47,41 @@
             margin: 10px 0;
         }
 		.group button {
-    padding: 10px; 
+    padding: 10px;
     border: 2px solid #000;
-    background-color: #33be5B;
-    width: 390px; 
-    height: 100px; 
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    width: 390px;
+    height: 100px;
     text-align: center;
-    font-weight: bold;
+    font-weight: bolder;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 1rem; 
-    overflow: hidden; 
-    white-space: nowrap; 
-    text-overflow: ellipsis; 
-    box-sizing: border-box; 
+    font-size: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    background-size: 200% 100%; /* Extender el gradiente para el efecto de animación */
+    animation: slideBackground 5s linear infinite; /* Animación continua del fondo */
+    transition: transform 0.3s ease; /* Transición suave para la transformación */
+}
+
+.group button:hover {
+    transform: scale(1.1); /* Aumentar el tamaño del botón al hacer hover */
+}
+
+@keyframes slideBackground {
+    0% {
+        background-position: left;
+    }
+    50% {
+        background-position: right;
+    }
+    100% {
+        background-position: left;
+    }
 }
 
 
-
-        .group button:hover {
-            background-color: #62DCB9;
-        }
         .footer {
             background: #e8e8e8;
             padding: 20px;

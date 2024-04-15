@@ -3,15 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page con Barra de Búsqueda en Navbar</title>
- <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #FEE3B3;
-            color: #333;
-        }
+    <title>Modern UI Made Easy</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-image: url('./../pics/back.PNG'); /* Update this path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(46, 10, 46, 0.5); /* Semi-transparent purple */
+    z-index: -1;
+    height: 100vh;
+}
+
         .navbar {
-            background-color: #333; 
+            background-color: #333;
             overflow: hidden;
             padding: 10px;
             position: relative;
@@ -25,8 +45,8 @@
             transition: background-color 0.3s;
         }
         .navbar a:hover {
-            background-color: #62DCB9; 
-            color: #0B8A30; 
+            background-color: #62DCB9;
+            color: #0B8A30;
         }
         .search-container {
             position: absolute;
@@ -40,20 +60,7 @@
             border-radius: 5px;
             width: 240px;
         }
-        .search-button {
-            padding: 10px;
-            background: #62DCB9; 
-            color: white;
-            font-size: 17px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .search-button:hover {
-            background-color: #33BE5B; 
-        }
-
-            @media (max-width: 600px) {
+        @media (max-width: 600px) {
             .navbar, .search-container {
                 position: static;
                 width: 100%;
@@ -68,37 +75,90 @@
             .search-button {
                 width: auto;
                 padding: 10px;
-                margin-top: 5px; 
+                margin-top: 5px;
             }
-              .button {
-            
+            .button {
                 flex: 0 0 100%;
                 max-width: 100%;
             }
         }
-       
-
-         .button-container {
+        .button-container {
             margin: 20px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around; 
+            justify-content: space-around;
         }
         .button {
-            padding: 20px 20px;
+            padding: 40px 30px;
             margin: 10px;
-            background-color: #0B8A30; 
-            color: white; 
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            background-size: 300% 100%;
+            color: black;
             border: none;
-            border-radius: 20px; 
+            font-weight: bolder;
+            border-radius: 20px;
             cursor: pointer;
-            transition: background-color 0.3s;
-            flex: 0 0 30%; 
-            max-width: 30%; 
+            flex: 0 0 30%;
+            max-width: 30%;
             text-decoration: none;
+            animation: slideColors 10s linear infinite;
         }
         .button:hover {
-            background-color: #33BE5B; 
+            background-position: 100% 50%;
+            transform: scale(1.1);
+        }
+        @keyframes slideColors {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: white;
+            background-image: url('path-to-hero-background.jpg'); /* Update this path */
+            background-size: cover;
+            background-position: center;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+        .hero .btn-trial {
+            padding: 1rem 2rem;
+            background-color: #0062cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .hero .btn-trial:hover {
+            background-color: #004da0;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem;
+            background: #fff;
+        }
+        .feature {
+            text-align: center;
+            padding: 1rem;
+        }
+        .feature img {
+            width: 64px;
+            height: auto;
+            margin-bottom: 0.5em;
+        }
+        .feature h3 {
+            margin-bottom: 0.5em;
         }
     </style>
 </head>
@@ -110,9 +170,10 @@
     <a href="imagenes/imagenes.html">Imagenes</a>
     <div class="search-container">
         <input type="text" class="search-input" id="search-bar" onkeyup="searchButton()" placeholder="Buscar...">
-        <button class="search-button" onclick="searchButton()">Buscar</button>
     </div>
 </div>
+
+
 
 <div class="button-container" id="button-container">
     <a href="introduccion.html" class="button">Introducción a los Grupos Prioritarios</a>
@@ -121,7 +182,6 @@
     <a href="desafios.html" class="button">Desafíos que Enfrentan los Grupos Prioritarios</a>
     <a href="derechos-humanos.html" class="button">Derechos Humanos y Grupos Prioritarios</a>
     <a href="promoviendo-equidad.html" class="button">Promoviendo la Equidad: Estrategias para Apoyar a los Grupos Prioritarios</a>
-
 </div>
 
 <script>
@@ -142,7 +202,15 @@ function searchButton() {
         }
     }
 }
+window.onload = function() {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    };
 </script>
+
 
 </body>
 </html>
